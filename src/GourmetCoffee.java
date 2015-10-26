@@ -219,6 +219,7 @@ public class GourmetCoffee  {
 	private void setSalesFormatter(SalesFormatter newFormatter){
 
 		/* PLACE YOUR CODE HERE */
+        salesFormatter = newFormatter;
 	}
 
 	/**
@@ -227,6 +228,7 @@ public class GourmetCoffee  {
 	private void displaySales() {
 
 		/* PLACE YOUR CODE HERE */
+        salesFormatter.formatSales(sales);
 	}
 
 	/**
