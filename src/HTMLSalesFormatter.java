@@ -5,10 +5,11 @@ import java.util.Iterator;
  */
 public class HTMLSalesFormatter implements SalesFormatter {
     private static HTMLSalesFormatter singletonInstance;
-    private HTMLSalesFormatter() {
-        singletonInstance = new HTMLSalesFormatter();
-    }
+    private HTMLSalesFormatter() {}
     public static HTMLSalesFormatter getSingletonInstance() {
+        if (singletonInstance == null) {
+            singletonInstance = new HTMLSalesFormatter();
+        }
         return singletonInstance;
     }
     private String generateOrderList(Order order) {

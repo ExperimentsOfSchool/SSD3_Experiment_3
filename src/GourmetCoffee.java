@@ -25,9 +25,9 @@ public class GourmetCoffee  {
 	private static PrintWriter  stdOut = new  PrintWriter(System.out, true);
 	private static PrintWriter  stdErr = new  PrintWriter(System.err, true);
 
-	private Sales  sales;
+	private Sales sales;
 
-	private SalesFormatter  salesFormatter;
+	private SalesFormatter salesFormatter;
 
 	/**
 	 * Loads data into the catalog and starts the application.
@@ -35,7 +35,7 @@ public class GourmetCoffee  {
 	 * @param args  String arguments.  Not used.
 	 * @throws IOException if there are errors in the input.
 	 */
-	public static void  main(String[]  args) throws IOException  {
+	public static void  main(String[] args) throws IOException  {
 
 		GourmetCoffee  application = new  GourmetCoffee();
 		application.run();
@@ -227,8 +227,7 @@ public class GourmetCoffee  {
 	 */
 	private void displaySales() {
 
-		/* PLACE YOUR CODE HERE */
-        salesFormatter.formatSales(sales);
+        stdOut.println(salesFormatter.formatSales(sales));
 	}
 
 	/**
@@ -242,19 +241,17 @@ public class GourmetCoffee  {
 		while (choice != 0)  {
 
 			if (choice == 1)  {
-
-				/* PLACE YOUR CODE HERE */
+				setSalesFormatter(PlainTextSalesFormatter.getSingletonInstance());
+				displaySales();
 
 			} else if (choice == 2)  {
-
-				/* PLACE YOUR CODE HERE */
+				setSalesFormatter(HTMLSalesFormatter.getSingletonInstance());
+				displaySales();
 
 			} else if (choice == 3)  {
-
-				/* PLACE YOUR CODE HERE */
-
+				setSalesFormatter(XMLSalesFormatter.getSingletonInstance());
+				displaySales();
 			}
-
 			choice = getChoice();
 		}
 	}

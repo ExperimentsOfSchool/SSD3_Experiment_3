@@ -5,10 +5,11 @@ import java.util.Iterator;
  */
 public class PlainTextSalesFormatter implements SalesFormatter {
     private static PlainTextSalesFormatter singletonInstance;
-    private PlainTextSalesFormatter() {
-        singletonInstance = new PlainTextSalesFormatter();
-    }
+    private PlainTextSalesFormatter() {}
     public static PlainTextSalesFormatter getSingletonInstance() {
+        if (singletonInstance == null) {
+            singletonInstance = new PlainTextSalesFormatter();
+        }
         return singletonInstance;
     }
 
